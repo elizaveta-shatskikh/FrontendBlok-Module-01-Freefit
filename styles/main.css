@@ -36,7 +36,6 @@
 body {
     font-family: var(--font-montserrat);
     font-size: 18px;
-    font-weight: 400;
     color: var(--dark);
 }
 
@@ -44,4 +43,80 @@ a {
     text-decoration: none;
     color: inherit;
     transition: var(--tr);
+}
+
+.main {
+    padding-top: 36px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+
+.logo {
+    display: block;
+    width: 97px;
+    height: 30px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nav {
+    display: flex;
+    gap: 55px;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background: var(--dark);
+    position: absolute;
+    margin-top: 10px;
+    transition: width var(--tr) ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mail {
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+}
+
+.mail::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: var(--yellow);
+    border-radius: 100%;
+    position: absolute;
+    left: -14px;
+    top: calc(50% - 13px);
+    z-index: -999;
 }
