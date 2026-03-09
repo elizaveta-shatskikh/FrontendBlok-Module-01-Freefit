@@ -28,6 +28,7 @@
     --dark: #2B3541;
     --gray: #F3F3F3;
     --yellow: #FBF138;
+    --light: #FEFCFE;
     --gradient: linear-gradient(180deg, #fbf138 0%, rgba(253, 249, 182, 0.45) 100%);
 
     --tr: 0.3s;
@@ -46,7 +47,7 @@ a {
 }
 
 .main {
-    padding-top: 36px;
+    padding-top: 35px;
 }
 
 .container {
@@ -62,9 +63,10 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    border: solid 1px var(--light);
 }
 
-.wrap {
+.header-wrap {
     display: flex;
     align-items: center;
     gap: 90px;
@@ -119,4 +121,101 @@ a {
     left: -14px;
     top: calc(50% - 13px);
     z-index: -999;
+}
+
+.title-h1 {
+    font-size: clamp(26px, 4.5vw ,48px);
+    line-height: 1.25;
+    letter-spacing: 3%;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title-h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 42px;
+    margin-bottom: 21px;
+}
+
+.title-h2 span:first-child {
+    margin-right: 20px;
+}
+
+.description {
+    font-size: clamp(16px, 5vw ,18px);
+    line-height: 1.5;
+}
+
+.btn {
+    display: block;
+    box-sizing: border-box;
+    max-width: 253px;
+    padding: 23px 30px;
+    background: var(--yellow);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3%;
+    text-transform: uppercase;
+    transition: var(--tr);
+}
+
+.btn:hover {
+    background: var(--dark);
+    color: var(--yellow);
+}
+
+/* Hero */
+
+.section-hero {
+    margin-top: 3px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-text {
+    flex-basis: 59.3%;
+}
+
+.wrap-description {
+    margin-left: 91px;
+}
+
+.description-hero {
+    max-width: 297px;
+    margin-bottom: 34px;
+}
+
+.hero-bg {
+    margin-top: 10px;
+    height: clamp(493px, 50vw, 847px);
+    flex-basis: calc(100% - 59.3%);
+    background: linear-gradient(90deg, #fbf138 0%, rgba(253, 249, 182, 0.45) 100%);
+    opacity: 0.2;
+}
+
+.women-bg {
+    position: absolute;
+    right: -9.65vw;
+    bottom: 0;
+    width: clamp(339px, 58vw, 996px);
+}
+
+@media (max-width: 1500px) {
+    .women-bg {
+        right: -5vw;
+    }
+}
+
+@media (max-width: 1300px) {
+    .women-bg {
+        right: 5px;
+    }
 }
