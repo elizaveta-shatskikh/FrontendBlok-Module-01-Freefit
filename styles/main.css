@@ -46,6 +46,10 @@ a {
     transition: var(--tr);
 }
 
+button {
+    border: none;
+}
+
 .main {
     padding-top: 35px;
     padding-bottom: 160px;
@@ -122,6 +126,7 @@ a {
     left: -14px;
     top: calc(50% - 13px);
     z-index: -999;
+    box-shadow: 0 13px 24px 0 rgba(251, 241, 56, 0.3);
 }
 
 .title-h1 {
@@ -149,7 +154,6 @@ a {
 .title-h3 {
     font-size: clamp(26px, 6vw ,40px);  /* потом скорректировать среднее значение */
     line-height: 1.25;
-    max-width: 300px;
     margin: 0;
 }
 
@@ -245,6 +249,10 @@ a {
     margin-bottom: 38px;
 }
 
+.schedule-title .title-h3 {
+    max-width: 300px;
+}
+
 .dates {
     font-size: clamp(16px, 3vw ,28px);
     font-weight: 700;
@@ -326,9 +334,163 @@ a {
 
 .section-subscribe {
     background: var(--gray);
-    padding-top: 174px;
-    padding-bottom: 174px; 
+    padding-top: 80px;
+    padding-bottom: 83px; 
 }
+
+.subscribe {
+    max-width: 638px;
+    margin: 0 auto;
+}
+
+.subscribe .title-h3 {
+    position: relative;
+    max-width: 587px;
+    margin: 0 auto;
+    z-index: 1;
+    padding-left: 5px;
+    margin-bottom: 39px;
+}
+
+.subscribe .title-h3::before {
+    content: "";
+    width: 53px;
+    height: 53px;
+    background: var(--yellow);
+    border-radius: 100%;
+    position: absolute;
+    left: -30px;
+    top: -18px;
+    z-index: -999;
+    box-shadow: 0 13px 24px 0 rgba(251, 241, 56, 0.3);
+}
+
+/* Form */
+
+.form {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-left: 21px;
+}
+
+.wrap-form {
+    flex-basis: calc(100% - 225px - 20px);
+}
+
+.wrap-btn .btn {
+    flex-basis: 225px;
+    padding: 25px 43px 22px;
+}
+
+input[type=email] {
+    box-sizing: border-box;
+    padding: 19px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type=email]::placeholder {
+    opacity: 0.3;
+}
+
+input[type=email]:focus {
+    outline: 1px solid var(--yellow);
+}
+
+input[type=email]:invalid {
+    outline: 1px solid #ae0303;
+}
+
+/* Checkbox */
+
+.agreement .text {
+    font-size: 11px;
+    color: rgba(43, 53, 65, 0.5);
+}
+
+.agreement a {
+    text-decoration: underline;
+    transition: var(--tr);
+    /* border-bottom: 1px solid; */
+}
+
+.agreement a:hover {
+    color: rgba(43, 53, 65, 1);
+}
+
+.checkbox:checked,
+.checkbox:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+.checkbox:checked + label,
+.checkbox:not(:checked) + label {
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+}
+
+/* Стили для псевдоэлемента before с фоном и обводкой, когда пункт НЕ активен */
+
+.checkbox.checkbox:not(:checked) + label::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: calc(50% - 10px);
+    background-color: transparent;
+    border: 2px solid var(--dark);
+}
+
+/* Стили для псевдоэлемента before с фоном и обводкой, когда пункт активен */
+
+.checkbox:checked + label::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: calc(50% - 10px);
+    background-color: var(--dark);
+    border: 2px solid var(--dark);
+}
+
+/* Стили для псевдоэлемента after с изображением, когда пункт НЕ активен */
+.checkbox:not(:checked) + label::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 12px;
+    background-image: url(../images/transparent_check.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 2px;
+    top: calc(50% - 6px);
+    transition: all .2s ease;
+}
+
+/* Стили для псевдоэлемента after с изображением, когда пункт активен */
+
+.checkbox:checked + label::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/check_box.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    left: 1px;
+    top: calc(50% - 9px);
+    opacity: 1;
+    transition: all .2s ease;
+
+}
+
 
 @media (max-width: 1500px) {
     .women-bg {
