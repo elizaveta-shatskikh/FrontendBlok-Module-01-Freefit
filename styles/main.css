@@ -141,10 +141,11 @@ header .container {
 }
 
 .mail {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: 700;
     position: relative;
     z-index: 1;
+    transition: var(--tr);
 }
 
 .mail::before {
@@ -160,8 +161,12 @@ header .container {
     box-shadow: 0 13px 24px 0 rgba(251, 241, 56, 0.3);
 }
 
+.mail:hover {
+    font-size: 17px;
+}
+
 .title-h1 {
-    font-size: clamp(26px, 4.5vw ,48px);
+    font-size: clamp(25px, 3.38vw ,48px);
     line-height: 1.25;
     letter-spacing: 3%;
     text-transform: uppercase;
@@ -171,7 +176,7 @@ header .container {
 }
 
 .title-h2 {
-    font-size: 40px;
+    font-size: clamp(26px, 3vw, 40px);
     font-weight: 400;
     line-height: 1.25;
     margin-top: 42px;
@@ -189,7 +194,7 @@ header .container {
 }
 
 .title-h4 {
-    font-size: clamp(14px, 5vw ,18px);
+    font-size: clamp(14px, 2.084vw ,18px);
     line-height: 1.25;
     font-weight: 700;
     margin-top: 36px;
@@ -197,12 +202,12 @@ header .container {
 }
 
 .description {
-    font-size: clamp(16px, 5vw ,18px);
+    font-size: clamp(16px, 2vw ,18px);
     line-height: 1.5;
 }
 
 .text {
-    font-size: clamp(14px, 5vw, 18px);
+    font-size: clamp(14px, 2.084vw, 18px);
     line-height: 1.5;
     margin: 0;
 }
@@ -227,6 +232,19 @@ header .container {
     background: var(--dark);
     color: var(--yellow);
     box-shadow: 0 13px 24px 0 rgba(70, 86, 106, 0.2);
+}
+
+.btn-burger {
+    background: transparent;
+    border: none;
+    display: none;
+    width: 29px;
+    height: 22px;
+    background-image: url(../images/burger-menu.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
 }
 
 /* Hero */
@@ -266,7 +284,21 @@ header .container {
     position: absolute;
     right: -9.65vw;
     bottom: 0;
-    width: clamp(339px, 58vw, 996px);
+    width: clamp(401px, 58vw, 996px);
+}
+
+.btn-down {
+    display: block;
+    width: 52px;
+    height: 55px;
+    background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: transparent;
+    position: absolute;
+    left: -1px;
+    bottom: -1px;
 }
 
 /* Schedule */
@@ -287,7 +319,7 @@ header .container {
 }
 
 .dates {
-    font-size: clamp(16px, 3vw ,28px);
+    font-size: clamp(16px, 4vw ,28px);
     font-weight: 700;
     margin-top: 2px;
 }
@@ -417,6 +449,7 @@ header .container {
 
 .wrap-btn .btn {
     padding: 25px 43px 22px;
+    width: 100%;
 }
 
 input[type=email] {
@@ -437,6 +470,10 @@ input[type=email]:focus {
 
 input[type=email]:invalid {
     outline: 1px solid #ae0303;
+}
+
+input[type=email].text {
+    font-size: 18px;
 }
 
 /* Checkbox */
@@ -537,7 +574,7 @@ input[type=email]:invalid {
 .about {
     display: flex;
     justify-content: space-between;
-    gap: 77px;
+    gap: 4vw;
     margin-bottom: 77px;
 }
 
@@ -546,7 +583,7 @@ input[type=email]:invalid {
 }
 
 .about-image {
-    flex-basis: calc(100% - 483px - 77px);
+    flex-basis: calc(100% - 483px - 4vw);
     align-self: center;
 }
 
@@ -555,12 +592,17 @@ input[type=email]:invalid {
     max-width: 581px;
 }
 
+.about-trainer-tablet {
+    display: none;
+}
+
 .about-text .title-h3 {
     margin-bottom: 20px;  
 }
 
 .about-text .description {
     margin-bottom: 33px;
+    font-size: clamp(16px, 2.5vw, 18px);
 }
 
 .about-text .btn {
@@ -593,6 +635,7 @@ input[type=email]:invalid {
 }
 
 .advantages-item .title-h4 {
+    font-size: clamp(16px, 2.5vw, 18px);
     margin-top: 0;
     margin-bottom: 21px;
 }
@@ -632,7 +675,7 @@ input[type=email]:invalid {
 }
 
 .copyright {
-    font-size: 14px;
+    font-size: clamp(10px, 1vw, 14px);
     line-height: 1.5;
     color: rgba(43, 53, 65, 0.3);
 }
@@ -650,6 +693,469 @@ input[type=email]:invalid {
 
 @media (max-width: 1300px) {
     .women-bg {
-        right: 5px;
+        right: 6px;
+    }
+}
+
+@media (max-width: 1110px) {
+    .main {
+        padding-top: 20px;
+    }
+
+    .header {
+        padding: 15px 4px;
+    }
+
+    .header-wrap {
+        gap: 38px;
+    }
+
+    .btn-burger {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .section-hero {
+        margin-top: 3px;
+    }
+
+    .hero {
+        gap: 20px;
+    }
+
+    .hero-text {
+        flex-basis: 48%;
+        margin-bottom: 25px;
+    }
+
+    .hero-bg {
+        flex-basis: calc(100% - 48% - 20px);
+        margin-top: 75px;
+    }
+
+    .title-h2 {
+        margin-top: 44px;
+        margin-bottom: 16px;
+    }
+
+    .wrap-description {
+        margin-left: 0;
+    }
+
+    .description-hero {
+        max-width: 280px;
+        margin-bottom: 42px;
+    }
+
+    .btn-down {
+        width: 39px;
+        height: 41px;
+        bottom: 55px;
+        left: 0;
+    }
+
+    .section-schedule {
+        padding-top: 76px;
+        padding-bottom: 96px;
+    }
+
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 224px);
+        gap: 20px 10px;
+    }
+
+    .schedule-item:nth-child(1) {
+        grid-column: 1/2;
+    }
+
+    .schedule-item:nth-child(2) {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    .schedule-item:nth-child(3) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .schedule-item:nth-child(4) {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    .schedule-item:nth-child(5) {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .schedule-item:nth-child(6) {
+        grid-row: 3/4;
+        grid-column: 2/3;
+    }
+
+    .schedule-item {
+        padding: 19px 23px 17px 23px;
+    }
+
+    .title-h4 {
+        margin-top: 29px;
+    }
+
+    .section-about {
+        padding-top: 90px;
+        padding-bottom: 59px;
+    }
+
+    .about {
+        margin-bottom: 34px;
+    }
+
+    .advantages {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .advantages-item:nth-child(1),
+    .advantages-item:nth-child(2),
+    .advantages-item:nth-child(3),
+    .advantages-item:nth-child(4) {
+        width: 50%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 950px) {
+    .about {
+        gap: 3vw;
+    }
+
+    .about-text {
+        flex-basis: 43vw;
+    }
+
+    .about-text .btn {
+        max-width: 214px;
+    }
+
+    .about-image {
+        flex-basis: calc(100% - 43vw - 3vw);
+    }
+
+    .about-trainer,
+    .footer-top .mail,
+    .copyright:first-child {
+        display: none;
+    }
+
+    .about-trainer-tablet {
+        display: block;
+        width: 100%;
+        max-width: 382px;
+        margin: 0 auto;
+    }
+
+    .advantages-item .title-h4 {
+        margin-bottom: 13px;
+    }
+
+    .advantages-item .description {
+        margin-top: 0;
+    }
+
+    .footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .footer .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .copyright:last-child {
+    margin-top: 9px;
+}
+}
+
+@media (max-width: 780px) {
+    .women-bg {
+        max-width: 401px;
+    }
+
+    .about-trainer-tablet {
+        margin-right: 0;
+    }
+
+    .advantages {
+        justify-content: flex-start;
+        gap: 27px 13.7vw;
+    }
+
+    .advantages-item:nth-child(1),
+    .advantages-item:nth-child(2),
+    .advantages-item:nth-child(3),
+    .advantages-item:nth-child(4) {
+        max-width: 251px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 670px) {
+    .main {
+        padding-top: 16px;
+    }
+
+    .header {
+        padding: 15px 0;
+    }
+
+    .logo {
+        width: 78px;
+        height: 24px;
+    }
+
+    .section-hero {
+        margin-top: 104px;
+    }
+
+    .hero {
+        justify-content: center;
+    }
+
+    .hero-text {
+        flex-basis: 335px;
+    }
+
+    .title-h2 {
+        margin-top: 42px;
+        margin-bottom: 17px;
+    }
+
+    .women-bg,
+    .hero-bg,
+    .btn-down,
+    .about-image {
+        display: none;
+    }
+
+    .btn {
+        max-width: 100%;
+    }
+
+    .section-subscribe {
+        padding-top: 57px;
+        padding-bottom: 64px;
+    }
+
+    .subscribe .title-h3 {
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .section-about {
+        padding-top: 76px;
+        padding-bottom: 51px;
+    }
+
+    .about {
+        justify-content: center;
+    }
+
+    .about-text {
+        flex-basis: 335px;
+    }
+
+    .about-text .title-h3 {
+        margin-bottom: 16px;
+    }
+
+    .about-text .description {
+        margin-bottom: 31px;
+    }
+
+    .about-text .btn {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 620px) {
+    .advantages {
+        justify-content: center;
+        gap: 27px;
+    }
+
+    .advantages-item:nth-child(1),
+    .advantages-item:nth-child(2),
+    .advantages-item:nth-child(3),
+    .advantages-item:nth-child(4) {
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 590px) {
+    .section-schedule {
+        padding-top: 50px;
+        padding-bottom: 76px;
+    }
+
+    .schedule-title {
+        margin-bottom: 19px;
+    }
+
+    .schedule-title .title-h3 {
+        max-width: 200px;
+    }
+
+    .dates {
+        margin-top: 11px;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,114px);
+        gap: 20px;
+    }
+
+    .schedule-item:nth-child(2) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .schedule-item:nth-child(3) {
+        grid-row: 3/4;
+    }
+
+    .schedule-item:nth-child(4) {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+
+    .schedule-item:nth-child(5) {
+        grid-row: 5/6;
+    }
+
+    .schedule-item:nth-child(6) {
+        grid-row: 6/7;
+        grid-column: 1/2;
+    }
+
+    .schedule-item {
+        padding: 12px 11px 10px 11px;
+    }
+
+    .schedule-item:nth-child(1) img,
+    .schedule-item:nth-child(4) img {
+        max-width: 39px;
+    }
+
+    .schedule-item:nth-child(2) img {
+        max-width: 34px;
+    }
+
+    .schedule-item:nth-child(3) img {
+        max-width: 23px;
+    }
+
+    .schedule-item:nth-child(5) img {
+        max-width: 46px;
+    }
+
+    .schedule-item:nth-child(6) img {
+        max-width: 35px;
+    }
+
+    .title-h4 {
+        margin-top: 5px;
+    }
+
+    .schedule-item:nth-child(2) .schedule-wrap {
+        position: absolute;
+        top: 18px;
+    }
+
+    .schedule-item:nth-child(2) .title-h4 {
+        margin-top: 8px;
+    }
+
+    .schedule-item:nth-child(3) .schedule-wrap {
+        position: absolute;
+        top: 26px;
+    }
+
+    .schedule-item:nth-child(3) .title-h4 {
+        margin-top: 7px;
+    }
+
+    .schedule-item:nth-child(5) .title-h4 {
+        margin-left: 0;
+    }
+
+    .subscribe .title-h3::before {
+        width: 42px;
+        height: 42px;
+        left: 2px;
+        top: -13px;
+    }
+
+    .form {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 34px;
+    }
+
+    input[type=email] {
+        padding-left: 24px;
+        margin-bottom: 6px;
+    }
+
+    .wrap-btn {
+        flex-basis: auto;
+    }
+
+    .wrap-btn .btn {
+        max-width: 335px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 450px) {
+    .subscribe .title-h3 {
+        max-width: 201px;
+        padding-left: 0;
+    }
+
+    .subscribe .title-h3::before {
+        width: 31px;
+        height: 31px;
+        left: -13px;
+        top: -13px;
+    }
+
+    .about {
+        margin-bottom: 57px;
+    }
+
+    .advantages {
+        max-width: 223px;
+        gap: 23px;
+    }
+
+    .advantages-item .title-h4 {
+        margin-bottom: 16px;
+    }
+
+    .footer {
+        padding-top: 8px;
+    }
+
+    .copyright:last-child {
+        max-width: 173px;
+        text-align: right;
+        /* margin-top: 9px; */
     }
 }
