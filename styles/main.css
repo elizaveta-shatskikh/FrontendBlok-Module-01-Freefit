@@ -111,7 +111,7 @@ header .container {
     display: block;
     width: 97px;
     height: 30px;
-    background-image: url(../images/logo.svg);
+    background-image: url(../images/icons/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -159,10 +159,6 @@ header .container {
     top: calc(50% - 13px);
     z-index: -999;
     box-shadow: 0 13px 24px 0 rgba(251, 241, 56, 0.3);
-}
-
-.mail:hover {
-    font-size: 17px;
 }
 
 .title-h1 {
@@ -223,6 +219,7 @@ header .container {
     text-align: center;
     letter-spacing: 3%;
     text-transform: uppercase;
+    color: var(--dark);
     cursor: pointer;
     transition: var(--tr);
     box-shadow: 0 13px 24px 0 rgba(251, 241, 56, 0.3);
@@ -240,7 +237,7 @@ header .container {
     display: none;
     width: 29px;
     height: 22px;
-    background-image: url(../images/burger-menu.svg);
+    background-image: url(../images/icons/burger-menu.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -291,7 +288,7 @@ header .container {
     display: block;
     width: 52px;
     height: 55px;
-    background-image: url(../images/arrow.svg);
+    background-image: url(../images/icons/arrow.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -539,7 +536,7 @@ input[type=email].text {
     position: absolute;
     width: 16px;
     height: 12px;
-    background-image: url(../images/transparent_check.svg);
+    background-image: url(../images/icons/transparent_check.svg);
     background-size: cover;
     background-repeat: no-repeat;
     left: 2px;
@@ -554,7 +551,7 @@ input[type=email].text {
     position: absolute;
     width: 18px;
     height: 18px;
-    background-image: url(../images/check_box.svg);
+    background-image: url(../images/icons/check_box.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -718,7 +715,7 @@ input[type=email].text {
     display: block;
     width: 20px;
     height: 19px;
-    background-image: url(../images/close.svg);
+    background-image: url(../images/icons/close.svg);
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
