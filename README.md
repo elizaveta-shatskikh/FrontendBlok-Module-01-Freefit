@@ -7,4 +7,4 @@
 - CSS
 - JavaScript
 
-[Демо](https://elizaveta-shatskikh.github.io/FrontendBlok-Module01-Freefit/)
+[Демо](https://elizaveta-shatskikh.github.io/FrontendBlok-Module-01-Freefit/)
