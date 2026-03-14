@@ -684,6 +684,70 @@ input[type=email].text {
     margin-top: 4px;
 }
 
+/* Modal */
+
+.modal {
+    background-color: var(--gray);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    max-width: 1100px;
+    padding-top: 28px;
+    padding-bottom: 39px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--tr);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-logo {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    margin-bottom: 44px;
+}
+
+.btn-close {
+    display: block;
+    width: 20px;
+    height: 19px;
+    background-image: url(../images/close.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 33px;
+    right: 10px;
+}
+
+.modal .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.modal .nav-link::after,
+.modal .nav-link:hover::after {
+    display: none;
+}
+
+.modal .nav-link:not(:last-child) {
+    border-bottom: 1px solid rgba(43, 53, 65, .2);
+    padding-bottom: 21px;
+}
+
 
 @media (max-width: 1500px) {
     .women-bg {
@@ -734,6 +798,10 @@ input[type=email].text {
     .hero-bg {
         flex-basis: calc(100% - 48% - 20px);
         margin-top: 75px;
+    }
+
+    .women-bg {
+        max-width: 56%;
     }
 
     .title-h2 {
@@ -877,8 +945,8 @@ input[type=email].text {
     }
 
     .copyright:last-child {
-    margin-top: 9px;
-}
+        margin-top: 9px;
+    }
 }
 
 @media (max-width: 780px) {
