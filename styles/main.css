@@ -90,7 +90,7 @@ button {
     position: fixed;
     z-index: 9999;
     opacity: 0;
-    transition: opacity var(--tr);
+    transition: opacity var(--tr), border var(--tr);
 }
 
 .header.js-ready {
@@ -99,7 +99,6 @@ button {
 
 .header.scroll {
     border: solid 1px rgba(43, 53, 65, .5);
-    transition: var(--tr);
 }
 
 .header-wrap,
