@@ -89,11 +89,17 @@ button {
     padding: 15px 15px;
     position: fixed;
     z-index: 9999;
-    transition: var(--tr);
+    opacity: 0;
+    transition: opacity var(--tr);
+}
+
+.header.js-ready {
+    opacity: 1;
 }
 
 .header.scroll {
     border: solid 1px rgba(43, 53, 65, .5);
+    transition: var(--tr);
 }
 
 .header-wrap,
@@ -676,10 +682,6 @@ input[type=email].text {
     color: rgba(43, 53, 65, 0.3);
 }
 
-.copyright:last-child {
-    /* margin-top: 4px; */
-}
-
 /* Modal */
 
 .modal {
@@ -760,7 +762,7 @@ input[type=email].text {
 @media (max-width: 1110px) {
 
     .header {
-        padding: 15px 5px;
+        padding: 15px 15px;
     }
 
     .header-wrap {
