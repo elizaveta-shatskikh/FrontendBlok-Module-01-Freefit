@@ -82,7 +82,7 @@ button {
     box-sizing: border-box;
     background-color: var(--light);
     margin: 0 auto;
-    padding: 15px 15px;
+    padding: 15px 0;
     position: fixed;
     z-index: 9999;
     transition: var(--tr);
@@ -94,6 +94,8 @@ button {
 
 .header.scroll {
     border: 1px solid rgba(43, 53, 65, .5);
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .header-wrap,
@@ -183,7 +185,7 @@ button {
 }
 
 .title-h3 {
-    font-size: clamp(26px, 6vw ,40px);  /* потом скорректировать среднее значение */
+    font-size: clamp(26px, 6vw ,40px);
     line-height: 1.25;
     margin: 0;
 }
@@ -754,11 +756,6 @@ input[type=email].text {
 }
 
 @media (max-width: 1110px) {
-
-    .header {
-        padding: 15px 15px;
-    }
-
     .header-wrap {
         gap: 38px;
     }
